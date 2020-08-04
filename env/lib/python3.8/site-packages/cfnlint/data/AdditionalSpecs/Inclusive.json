@@ -1,0 +1,94 @@
+{
+  "PropertyTypes": {
+    "AWS::CloudFront::Distribution.CustomErrorResponse": {
+      "ResponseCode": [
+        "ResponsePagePath"
+      ]
+    },
+    "AWS::CloudFront::Distribution.ViewerCertificate": {
+      "AcmCertificateArn": [
+        "SslSupportMethod"
+      ],
+      "IamCertificateId": [
+        "SslSupportMethod"
+      ]
+    },
+    "AWS::EC2::SecurityGroup.Ingress": {
+      "FromPort": [
+        "ToPort"
+      ],
+      "ToPort": [
+        "FromPort"
+      ]
+    },
+    "AWS::EC2::SecurityGroup.Egress": {
+      "FromPort": [
+        "ToPort"
+      ],
+      "ToPort": [
+        "FromPort"
+      ]
+    }
+  },
+  "ResourceTypes": {
+    "AWS::ApplicationAutoScaling::ScalingPolicy": {
+      "ResourceId": [
+        "ScalableDimension",
+        "ServiceNamespace"
+      ],
+      "ScalableDimension": [
+        "ResourceId",
+        "ServiceNamespace"
+      ],
+      "ServiceNamespace": [
+        "ResourceId",
+        "ScalableDimension"
+      ]
+    },
+    "AWS::RDS::DBCluster": {
+      "MasterUsername": [
+        "MasterUserPassword"
+      ],
+      "MasterUserPassword": [
+        "MasterUsername"
+      ]
+    },
+    "AWS::RDS::DBInstance": {
+      "MasterUsername": [
+        "MasterUserPassword"
+      ],
+      "MasterUserPassword": [
+        "MasterUsername"
+      ]
+    },
+    "AWS::OpsWorks::Stack": {
+      "VpcId": [
+        "DefaultSubnetId"
+      ]
+    }
+  },
+  "AWS::EC2::SecurityGroup": {
+    "SecurityGroupEgress": [
+      "VpcId"
+    ],
+    "VpcId": [
+      "SecurityGroupEgress"
+    ]
+  },
+  "AWS::EC2::SecurityGroupIngress": {
+    "FromPort": [
+      "ToPort"
+    ],
+    "ToPort": [
+      "FromPort"
+    ]
+  },
+  "AWS::EC2::SecurityGroupEgress": {
+    "FromPort": [
+      "ToPort"
+    ],
+    "ToPort": [
+      "FromPort"
+    ]
+  }
+}

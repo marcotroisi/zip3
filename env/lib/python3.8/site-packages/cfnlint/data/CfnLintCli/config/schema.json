@@ -1,0 +1,86 @@
+{
+  "$id": "https://github.com/aws-cloudformation/cfn-python-lint/blob/master/src/cfnlint/data/CfnLintCli/config/schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "CFNLINTRC configuration schema",
+  "title": "CFNLINTRC JSON Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "append_rules": {
+      "description": "Location of directories to append rules from",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ignore_checks": {
+      "description": "List of checks to ignore",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "include_checks": {
+      "description": "List of checks to include",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "mandatory_checks": {
+      "description": "List of mandatory checks to enforce",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "override_spec": {
+      "description": "Path to spec file to override with",
+      "type": "string"
+    },
+    "output_file": {
+      "description": "Path to the file to write the main output to",
+      "type": "string"
+    },
+    "regions": {
+      "description": "Regions to test against",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "configure_rules": {
+      "description": "Configure rules",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "anyOf": [
+                {"type": "string"},
+                {"type": "integer"},
+                {"type": "boolean"}
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "templates": {
+      "description": "Templates to lint",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ignore_templates": {
+      "description": "Templates to ignore",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  }
+}
