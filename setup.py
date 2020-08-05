@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="zip3",
-    version="1.0.1",
+    version="1.0.2",
     description="A package to create a ZIP archive of all your files on S3",
     long_description=README,
     long_description_content_type="text/markdown",

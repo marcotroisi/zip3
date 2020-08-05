@@ -1,3 +1,29 @@
 # Zip3
 
-A package to create a ZIP archive of all your files on S3
+Select a directory in your S3 bucket, generate a ZIP archive out of it, and save the ZIP on a destination of your choice in your S3 bucket.
+
+## How it works
+
+* Everything is kept in memory throughout the whole process; no temporary files are created
+* A simple interface: call `Zip3.generate(input_directory, output_key)` (where `input_directory` is the directory in S3 that you want to ZIP, and `output_key` is where you want the newly-generated ZIP to get saved) and you're good to go!
+
+## How to use it
+
+```python
+import boto3
+from zip3 import Zip3
+
+# Set up connection to S3
+conn = boto3.resource("s3", region_name="eu-west-2")
+# Instantiate Zip3 with your S3 bucket
+Z3 = Zip3(conn, s3_bucket=bucket_name)
+output_key = "test_folder/archive2.zip"
+input_directory = "test_folder"
+# Generate ZIP and save it on S3
+Z3.generate(input_directory, output_key)
+```
+
+## How to contribute
+
+* Create a PR with your changes
+* Create an Issue with something you would like from this library

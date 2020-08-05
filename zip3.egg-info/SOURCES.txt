@@ -1,0 +1,9 @@
+README.md
+setup.py
+zip3
+zip3/__init__.py
+zip3.egg-info/PKG-INFO
+zip3.egg-info/SOURCES.txt
+zip3.egg-info/dependency_links.txt
+zip3.egg-info/requires.txt
+zip3.egg-info/top_level.txt
